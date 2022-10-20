@@ -13,7 +13,7 @@ public class TADashboardTests extends BrowserTestBase {
     @Test(description = "Verify that user can login specific repository successfully via Dashboard login page with correct credentials")
     public void DA_LOGIN_TC001() {
         loginPage.Login("administrator", "");
-//        Assert.assertTrue(dashboardPage.isOverviewTabDisplay(), "User is not in Dashboard page");
+        dashboardPage.isMainPageDisplayed();
         dashboardPage.logOut();
     }
 

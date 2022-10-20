@@ -12,9 +12,9 @@ public class LoginPage extends BasePage {
     public void Login(String username, String password) {
         username_login_input.enter(username);
         password_login_input.enter(password);
-        we_capture_value("username = "+username+"");
+//        we_capture_value("username = "+username+"");
         button_login.click();
-        sleep_time(5);
+        sleep_time(50);
     }
 
 }
