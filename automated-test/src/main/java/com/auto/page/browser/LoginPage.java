@@ -14,7 +14,7 @@ public class LoginPage extends BasePage {
         password_login_input.enter(password);
 //        we_capture_value("username = "+username+"");
         button_login.click();
-        sleep_time(50);
+//        sleep_time(50);
     }
 
 }
