@@ -5,18 +5,18 @@ import com.logigear.element.Element;
 public class TADashboardMainPage extends BasePage {
 
     private final Element mainMenu = new Element("//div[@id='main-menu']");
-    private final Element active_execution_dashboard = new Element("//div[@id='main-menu']//li[@class='active']/a[@class='active']");
-    private final Element account_setting = new Element("//a[@href='#Welcome' and contains(text(),'administrator')]");
+    private final Element activeExecutionDashboard = new Element("//div[@id='main-menu']//li[@class='active']/a[@class='active']");
+    private final Element accountSetting = new Element("//a[@href='#Welcome' and contains(text(),'administrator')]");
     private final Element logoutButton = new Element("//a[@href='#Welcome' and contains(text(),'administrator')]/parent::li/ul/li/a[contains(text(),'Logout')]");
 
 
     public void isMainPageDisplayed() {
-        assert_displayed(mainMenu);
-        assert_displayed(active_execution_dashboard);
+        assertDisplayed(mainMenu, "Main menu of page is not display");
+        assertDisplayed(activeExecutionDashboard, "User is not stay at main page");
     }
 
     public void logOut() {
-        account_setting.click();
+        accountSetting.click();
         logoutButton.click();
     }
 

@@ -1,13 +1,12 @@
 package com.auto.test.browser;
 
-import com.auto.page.browser.LoginPage;
+import com.auto.page.browser.loginPage;
 import com.auto.page.browser.TADashboardMainPage;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class TADashboardTests extends BrowserTestBase {
+public class loginPageTests extends testBase {
 
-    LoginPage loginPage = new LoginPage();
+    com.auto.page.browser.loginPage loginPage = new loginPage();
     TADashboardMainPage dashboardPage = new TADashboardMainPage();
 
     @Test(description = "Verify that user can login specific repository successfully via Dashboard login page with correct credentials")

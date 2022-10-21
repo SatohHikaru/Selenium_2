@@ -15,7 +15,7 @@ public class BasePage {
     public static WebDriver driver;
     private final UserModel usermodel = new UserModel();
 
-    public void sleep_time(int time) {
+    public void sleepTime(int time) {
         try {
             Thread.sleep(time);
         } catch (InterruptedException e) {
@@ -23,7 +23,7 @@ public class BasePage {
         }
     }
 
-    public void we_capture_value(String value) {
+    public void captureValueOf(String value) {
         String[] arrayValue = value.split("=", 2);
         arrayValue = Arrays.stream(arrayValue).map(String::trim).toArray(String[]::new);
         String typeValue = arrayValue[0];
@@ -33,35 +33,35 @@ public class BasePage {
         }
     }
 
-    public void we_get_value(String value) {
+    public void getValueOf(String value) {
         if ((value.toLowerCase()).equals("username")) {
             usermodel.getUsername();
         }
     }
 
-    public void assert_Equal(String element, String expectedText, String comparison_type) {
+    public void assertEqual(String element, String expectedText, String comparison_type) {
         switch (comparison_type) {
             case "str":
                 Assert.assertEquals(element, expectedText);
             case "int":
                 Assert.assertEquals(Integer.parseInt(element), Integer.parseInt(expectedText));
-//            case "list":
-//               List<String> eleList = new ArrayList<String>(Arrays.asList(element.split(",")));
-//                List<String> textList = new ArrayList<String>(Arrays.asList(expectedText.split(",")));
-//                //Assert.assertEquals(eleList,textList);
-//                Assert.assertSame(eleList,textList);
+            case "list":
+                List<String> eleList = new ArrayList<String>(Arrays.asList(element.split(",")));
+                List<String> textList = new ArrayList<String>(Arrays.asList(expectedText.split(",")));
+                //Assert.assertEquals(eleList,textList);
+                Assert.assertSame(eleList,textList);
             default:
                 System.out.println("Please input String or ID only");
                 break;
         }
     }
 
-    public void assert_displayed(Element element_display) {
+    public void assertDisplayed(Element element_display, String fail_message) {
         boolean checkType = false;
         if (element_display.isDisplayed()) {
             checkType = true;
         }
-        Assert.assertTrue(checkType, "User is not in Dashboard page");
+        Assert.assertTrue(checkType, fail_message);
     }
 
 }

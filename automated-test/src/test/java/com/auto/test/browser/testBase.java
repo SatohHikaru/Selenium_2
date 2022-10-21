@@ -10,8 +10,8 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 
-public class BrowserTestBase {
-    private static final Logger log = LoggerFactory.getLogger(BrowserTestBase.class);
+public class testBase {
+    private static final Logger log = LoggerFactory.getLogger(testBase.class);
     Configuration config;
 
     @BeforeClass
